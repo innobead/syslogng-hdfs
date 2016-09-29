@@ -48,8 +48,13 @@ A syslog-ng log redirects to HDFS.
 > docker exec syslognghdfs_hadoop_1 /usr/local/hadoop/bin/hadoop fs -cat /syslog/*
 
 ## Notes
-1. Need to make sure lib 
+1. Need to make sure libjvm.so existed and refresh shared lib cache
 2. Need to copy hadoop common libraries (version the same from the hadoop instance) for syslog-ng hdfs plugin
 
 > <hadoop distribution>/share/hadoop/common/*.jar including files under libs too
+
+3. There is no syslog-ng 3.8.x available on EPEL7 repo, need to use unofficial ones mentioned in
+ [syslog-ng github](https://github.com/balabit/syslog-ng)
+ 
+4. The same HDFS libs dependency as Flum HDFS
 
