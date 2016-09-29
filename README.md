@@ -44,7 +44,9 @@ A syslog-ng log redirects to HDFS.
 2. Input message to syslog log file, to see it redirects to HDFS
 
 > docker exec syslognghdfs_syslog_1 /bin/bash -c "send_syslog.py"
+
 > docker exec syslognghdfs_syslog_1 /bin/bash -c "cat /var/log/output"
+
 > docker exec syslognghdfs_hadoop_1 /usr/local/hadoop/bin/hadoop fs -cat /syslog/*
 
 ## Notes
